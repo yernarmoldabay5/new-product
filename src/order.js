@@ -64,6 +64,9 @@ const generateHeatBill = () => {
 
 generateHeatBill();
 
+let tg = window.Telegram.WebApp;
+tg.sendData("Test Data");
+
 const orderAgain = () => {
   localStorage.setItem("data", JSON.stringify([]));
   return window.location.replace("index.html");
