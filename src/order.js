@@ -35,6 +35,8 @@ const generateHeatBill = () => {
   // get the current date
   let date = new Date().toISOString().slice(0, 10);
 
+  let tg = window.Telegram.WebApp;
+  tg.sendData("Test Data");
   // create the complete UI of the bill
   heatBill.innerHTML = `
         <h1>Durger King LLC</h1>
@@ -63,9 +65,6 @@ const generateHeatBill = () => {
 };
 
 generateHeatBill();
-
-let tg = window.Telegram.WebApp;
-tg.sendData("Test Data");
 
 const orderAgain = () => {
   localStorage.setItem("data", JSON.stringify([]));
