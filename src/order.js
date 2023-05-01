@@ -36,7 +36,7 @@ const generateHeatBill = () => {
   let date = new Date().toISOString().slice(0, 10);
 
   let tg = window.Telegram.WebApp;
-  tg.sendData("Test Data");
+  tg.sendData(items);
   // create the complete UI of the bill
   heatBill.innerHTML = `
         <h1>Durger King LLC</h1>
