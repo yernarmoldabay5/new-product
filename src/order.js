@@ -51,7 +51,7 @@ const generateHeatBill = () => {
   // get the current date
   let date = new Date().toISOString().slice(0, 10);
   let tg = window.Telegram.WebApp;
-  tg.sendData(json);
+  tg.sendData(JSON.stringify(json));
 
   // create the complete UI of the bill
   heatBill.innerHTML = `
