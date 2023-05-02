@@ -13,10 +13,12 @@ itemsSum();
 
 const generateHeatBill = () => {
   // generate item rows
+  let send_data = "";
   let items = basket
     .map((basketItem) => {
       let search = shopItems.find((item) => item.id === basketItem.id);
       let itemTotalPrice = basketItem.item * search.price;
+      send_data = send_data + search.name + ":::" + basketItem.item + ":::" + itemTotalPrice.toFixed(2) + "\n";
       return `<tr><td>${search.name}</td><td>x${
         basketItem.item
       }</td><td>${itemTotalPrice.toFixed(2)}$</td></tr>`;
@@ -34,9 +36,9 @@ const generateHeatBill = () => {
 
   // get the current date
   let date = new Date().toISOString().slice(0, 10);
-
   let tg = window.Telegram.WebApp;
-  tg.sendData(items);
+  tg.sendData(send_data);
+
   // create the complete UI of the bill
   heatBill.innerHTML = `
         <h1>Durger King LLC</h1>
