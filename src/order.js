@@ -35,10 +35,6 @@ const generateHeatBill = () => {
         };
     });
 
-    let json = {
-        "basket_items": basket_items
-    };
-
   // calculate teh total bill price
   let totalPrice = basket
     .map((basketItem) => {
@@ -48,6 +44,11 @@ const generateHeatBill = () => {
     .reduce((a, b) => a + b, 0)
     .toFixed(2);
 
+   let json = {
+        "basket_items": basket_items,
+        "total_price": totalPrice
+    };
+  
   // get the current date
   let date = new Date().toISOString().slice(0, 10);
   let tg = window.Telegram.WebApp;
