@@ -1,5 +1,9 @@
 let shop = document.getElementById("shop");
 let basket = JSON.parse(localStorage.getItem("data")) || [];
+tg.show()
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+  window.location.href = 'cart.html';
+});
 
 let generateShopItems = () => {
   return (shop.innerHTML = shopItems
