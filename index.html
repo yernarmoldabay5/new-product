@@ -36,6 +36,13 @@
     </section>
   </body>
 
+   <script>
+    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
+    tg.expand();
+    Telegram.WebApp.onEvent('mainButtonClicked', function(){
+      window.location.href = 'cart.html';
+    });
+  </script>
   <script
     src="https://kit.fontawesome.com/602cd2a7a9.js"
     crossorigin="anonymous"
