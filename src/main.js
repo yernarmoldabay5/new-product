@@ -1,6 +1,11 @@
 let shop = document.getElementById("shop");
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
+const checkBucket = () => {
+  // localStorage.setItem("data", JSON.stringify([]));
+  return window.location.replace("cart.html");
+};
+
 let generateShopItems = () => {
   return (shop.innerHTML = shopItems
     .map((item) => {
