@@ -33,17 +33,9 @@
     <!-- Shop -->
     <section class="shop">
       <section class="shop__grid" id="shop"></section>
+      <button onclick="checkBucket()" class="orderAgain">Проверить корзину</button>
     </section>
   </body>
-
-   <script>
-    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
-    tg.expand();
-    tg.MainButton.show();
-    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      window.location.href = 'cart.html';
-    });
-  </script>
   <script
     src="https://kit.fontawesome.com/602cd2a7a9.js"
     crossorigin="anonymous"
