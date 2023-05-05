@@ -187,7 +187,7 @@ const orderTg = () => {
         "total_price": totalPrice
     };
     let tg = window.Telegram.WebApp;
-    tg.sendData(json);
+    tg.sendData(JSON.stringify(json));
 }
 
 const totalPrice = () => {
